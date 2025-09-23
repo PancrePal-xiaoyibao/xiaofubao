@@ -1,0 +1,130 @@
+医学知识分类器测试
+==================================================
+分类器配置摘要:
+  total_categories: 32
+  synonym_types: ['disease_synonyms', 'drug_synonyms', 'symptom_synonyms', 'treatment_synonyms', 'examination_synonyms']
+  total_synonyms: 906
+  confidence_threshold: 0.7
+  max_categories_per_chunk: 3
+  available_categories: ['clinical_guidelines', 'clinical_guidelines.diagnosis_guidelines', 'clinical_guidelines.treatment_guidelines', 'clinical_guidelines.management_guidelines', 'pharmacology', 'pharmacology.drug_therapy', 'pharmacology.dosage_administration', 'pharmacology.adverse_effects', 'treatment_experience', 'treatment_experience.case_studies', 'treatment_experience.treatment_outcomes', 'treatment_experience.clinical_experience', 'psychology_mental_health', 'psychology_mental_health.psychological_assessment', 'psychology_mental_health.psychological_intervention', 'psychology_mental_health.mental_health_management', 'nutrition_diet', 'nutrition_diet.nutritional_assessment', 'nutrition_diet.dietary_management', 'nutrition_diet.nutritional_support', 'pain_management', 'pain_management.pain_assessment', 'pain_management.pain_treatment', 'pain_management.chronic_pain', 'cancer_complications', 'cancer_complications.gastrointestinal_complications', 'cancer_complications.hematologic_complications', 'cancer_complications.vascular_complications', 'cancer_complications.neurologic_complications', 'cancer_complications.metabolic_complications', 'cancer_complications.infectious_complications', 'cancer_complications.treatment_related_complications']
+
+测试文本 1:
+原文: 根据最新的肺癌诊疗指南，对于非小细胞肺癌患者，推荐进行EGFR基因检测。
+分类结果: {'clinical_guidelines': 1.0}
+医学术语: {'diseases': ['恶性肿瘤', '肺癌', 'SCLC', 'NSCLC'], 'drugs': [], 'symptoms': [], 'treatments': [], 'examinations': []}
+生成标签: ['#clinical_guidelines', '#diseases_恶性肿瘤', '#diseases_肺癌', '#diseases_SCLC']
+------------------------------
+测试文本 2:
+原文: 患者出现恶心、呕吐症状，给予奥美拉唑40mg静脉注射，每日一次。
+分类结果: {'cancer_complications': 0.7866666666666666, 'cancer_complications.treatment_related_complications': 1.0}
+医学术语: {'diseases': [], 'drugs': ['洛赛克'], 'symptoms': ['想吐', '呕', '呕吐'], 'treatments': [], 'examinations': []}
+生成标签: ['#cancer_complications', '#cancer_complications_treatment_related_complications', '#drugs_洛赛克', '#symptoms_想吐', '#symptoms_呕', '#symptoms_呕吐']
+------------------------------
+测试文本 3:
+原文: 术后疼痛评估显示VAS评分为7分，给予吗啡10mg肌肉注射进行镇痛治疗。
+分类结果: {'pain_management': 1.0}
+医学术语: {'diseases': [], 'drugs': ['吗啡'], 'symptoms': ['痛', '疼痛'], 'treatments': [], 'examinations': []}
+生成标签: ['#pain_management', '#drugs_吗啡', '#symptoms_痛', '#symptoms_疼痛']
+------------------------------
+测试文本 4:
+原文: 营养评估显示患者存在营养不良，建议增加蛋白质摄入，每日2g/kg体重。
+分类结果: {'clinical_guidelines': 0.7789473684210526, 'nutrition_diet': 0.9263157894736841, 'nutrition_diet.nutritional_assessment': 1.0}
+医学术语: {'diseases': [], 'drugs': [], 'symptoms': [], 'treatments': [], 'examinations': []}
+生成标签: ['#clinical_guidelines', '#nutrition_diet', '#nutrition_diet_nutritional_assessment']
+------------------------------
+测试文本 5:
+原文: 患者出现焦虑情绪，建议心理干预，必要时给予抗焦虑药物治疗。
+分类结果: {'psychology_mental_health': 1.0, 'psychology_mental_health.psychological_intervention': 0.9313725490196078, 'pharmacology.drug_therapy': 0.8627450980392156}
+医学术语: {'diseases': [], 'drugs': [], 'symptoms': [], 'treatments': ['心理治疗'], 'examinations': []}
+生成标签: ['#psychology_mental_health', '#psychology_mental_health_psychological_intervention', '#pharmacology_drug_therapy', '#treatments_心理治疗']
+------------------------------
+测试文本 6:
+原文: 患者化疗后出现CIPN，表现为手足麻木、疼痛，影响日常生活
+分类结果: {'pharmacology.drug_therapy': 1.0, 'cancer_complications.neurologic_complications': 1.0, 'pain_management': 0.8806818181818182}
+医学术语: {'diseases': [], 'drugs': [], 'symptoms': ['痛', '疼痛'], 'treatments': ['化疗'], 'examinations': []}
+生成标签: ['#pharmacology_drug_therapy', '#cancer_complications_neurologic_complications', '#pain_management', '#symptoms_痛', '#symptoms_疼痛', '#treatments_化疗']
+------------------------------
+测试文本 7:
+原文: 术后第3天患者出现肠梗阻，腹胀明显，停止进食，予以胃肠减压
+分类结果: {'cancer_complications': 0.8320000000000001, 'cancer_complications.gastrointestinal_complications': 1.0}
+医学术语: {'diseases': [], 'drugs': [], 'symptoms': [], 'treatments': [], 'examinations': []}
+生成标签: ['#cancer_complications', '#cancer_complications_gastrointestinal_complications']
+------------------------------
+测试文本 8:
+原文: 患者出现消化道出血，表现为黑便，血红蛋白下降至70g/L
+分类结果: {'cancer_complications': 0.9440000000000001, 'cancer_complications.gastrointestinal_complications': 1.0}
+医学术语: {'diseases': [], 'drugs': [], 'symptoms': [], 'treatments': [], 'examinations': []}
+生成标签: ['#cancer_complications', '#cancer_complications_gastrointestinal_complications']
+------------------------------
+测试文本 9:
+原文: 化疗期间发生骨髓抑制，白细胞计数降至1.5×10⁹/L，需要升白治疗
+分类结果: {'pharmacology.drug_therapy': 1.0, 'cancer_complications': 0.787878787878788, 'cancer_complications.hematologic_complications': 1.0}
+医学术语: {'diseases': [], 'drugs': [], 'symptoms': [], 'treatments': ['化疗'], 'examinations': []}
+生成标签: ['#pharmacology_drug_therapy', '#cancer_complications', '#cancer_complications_hematologic_complications', '#treatments_化疗']
+------------------------------
+测试文本 10:
+原文: 患者确诊特鲁索症候群，下肢深静脉血栓形成，予以抗凝治疗
+分类结果: {'cancer_complications.vascular_complications': 1.0}
+医学术语: {'diseases': [], 'drugs': [], 'symptoms': [], 'treatments': [], 'examinations': []}
+生成标签: ['#cancer_complications_vascular_complications']
+------------------------------
+测试文本 11:
+原文: 胰腺癌患者使用吉西他滨联合白蛋白紫杉醇化疗方案
+分类结果: {'pharmacology.drug_therapy': 1.0}
+医学术语: {'diseases': ['恶性肿瘤', '肺腺癌', '胰癌'], 'drugs': ['紫杉醇', '健择', '白蛋白紫杉醇'], 'symptoms': [], 'treatments': ['化疗'], 'examinations': []}
+生成标签: ['#pharmacology_drug_therapy', '#diseases_恶性肿瘤', '#diseases_肺腺癌', '#diseases_胰癌', '#drugs_紫杉醇', '#drugs_健择', '#drugs_白蛋白紫杉醇', '#treatments_化疗']
+------------------------------
+测试文本 12:
+原文: 乳腺癌HER2阳性患者接受曲妥珠单抗靶向治疗
+分类结果: {'pharmacology.drug_therapy': 1.0}
+医学术语: {'diseases': ['恶性肿瘤', '乳癌', '肺腺癌'], 'drugs': ['赫赛汀'], 'symptoms': [], 'treatments': ['靶向治疗'], 'examinations': []}
+生成标签: ['#pharmacology_drug_therapy', '#diseases_恶性肿瘤', '#diseases_乳癌', '#diseases_肺腺癌', '#drugs_赫赛汀', '#treatments_靶向治疗']
+------------------------------
+测试文本 13:
+原文: 非小细胞肺癌患者EGFR突变，予奥希替尼治疗
+分类结果: {}
+医学术语: {'diseases': ['恶性肿瘤', '肺癌', 'SCLC', 'NSCLC'], 'drugs': ['泰瑞沙'], 'symptoms': [], 'treatments': [], 'examinations': []}
+生成标签: ['#diseases_恶性肿瘤', '#diseases_肺癌', '#diseases_SCLC', '#drugs_泰瑞沙']
+------------------------------
+测试文本 14:
+原文: 急性髓系白血病患者接受柔红霉素+阿糖胞苷诱导化疗
+分类结果: {'pharmacology.drug_therapy': 1.0}
+医学术语: {'diseases': ['血癌', 'AML'], 'drugs': ['阿糖胞苷', 'DNR'], 'symptoms': [], 'treatments': ['化疗'], 'examinations': []}
+生成标签: ['#pharmacology_drug_therapy', '#diseases_血癌', '#diseases_AML', '#drugs_阿糖胞苷', '#drugs_DNR', '#treatments_化疗']
+------------------------------
+测试文本 15:
+原文: 卵巢癌患者术后予紫杉醇+卡铂辅助化疗
+分类结果: {'pharmacology.drug_therapy': 1.0}
+医学术语: {'diseases': ['恶性肿瘤', '卵巢癌'], 'drugs': ['紫杉醇', '卡铂'], 'symptoms': [], 'treatments': ['化疗'], 'examinations': []}
+生成标签: ['#pharmacology_drug_therapy', '#diseases_恶性肿瘤', '#diseases_卵巢癌', '#drugs_紫杉醇', '#drugs_卡铂', '#treatments_化疗']
+------------------------------
+测试文本 16:
+原文: 结直肠癌肝转移患者使用贝伐珠单抗联合FOLFOX方案
+分类结果: {}
+医学术语: {'diseases': ['恶性肿瘤', '直肠癌'], 'drugs': ['BEV'], 'symptoms': [], 'treatments': [], 'examinations': []}
+生成标签: ['#diseases_恶性肿瘤', '#diseases_直肠癌', '#drugs_BEV']
+------------------------------
+测试文本 17:
+原文: 肝细胞癌患者接受索拉非尼分子靶向治疗
+分类结果: {'pharmacology.drug_therapy': 1.0}
+医学术语: {'diseases': ['恶性肿瘤', 'HCC'], 'drugs': ['多吉美'], 'symptoms': [], 'treatments': ['靶向治疗'], 'examinations': []}
+生成标签: ['#pharmacology_drug_therapy', '#diseases_恶性肿瘤', '#diseases_HCC', '#drugs_多吉美', '#treatments_靶向治疗']
+------------------------------
+测试文本 18:
+原文: 胃癌患者予奥沙利铂+5-氟尿嘧啶围手术期化疗
+分类结果: {'pharmacology.drug_therapy': 1.0}
+医学术语: {'diseases': ['恶性肿瘤', '胃癌'], 'drugs': ['乐沙定', '氟尿嘧啶', '5-氟尿嘧啶'], 'symptoms': [], 'treatments': ['手术', '化疗'], 'examinations': []}
+生成标签: ['#pharmacology_drug_therapy', '#diseases_恶性肿瘤', '#diseases_胃癌', '#drugs_乐沙定', '#drugs_氟尿嘧啶', '#drugs_5-氟尿嘧啶', '#treatments_手术', '#treatments_化疗']
+------------------------------
+测试文本 19:
+原文: 霍奇金淋巴瘤患者接受ABVD方案化疗
+分类结果: {'pharmacology.drug_therapy': 1.0}
+医学术语: {'diseases': ['淋巴瘤', 'HL'], 'drugs': [], 'symptoms': [], 'treatments': ['化疗'], 'examinations': []}
+生成标签: ['#pharmacology_drug_therapy', '#diseases_淋巴瘤', '#diseases_HL', '#treatments_化疗']
+------------------------------
+测试文本 20:
+原文: 分化型甲状腺癌术后予碘131放射性治疗
+分类结果: {}
+医学术语: {'diseases': ['恶性肿瘤', '肺腺癌', '甲状腺癌'], 'drugs': [], 'symptoms': [], 'treatments': [], 'examinations': []}
+生成标签: ['#diseases_恶性肿瘤', '#diseases_肺腺癌', '#diseases_甲状腺癌']
+------------------------------

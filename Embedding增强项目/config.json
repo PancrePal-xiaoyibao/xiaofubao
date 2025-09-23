@@ -1,0 +1,572 @@
+{
+  "llm_config": {
+    "default_provider": "glm",
+    "providers": {
+      "glm": {
+        "model": "glm-4-flash",
+        "api_key": "74f5b0eec1024d11a1cd75003aca26ef.oI1LV2fDx2UkzN81",
+        "base_url": "https://open.bigmodel.cn/api/paas/v4/",
+        "max_tokens": 4000,
+        "temperature": 0.3,
+        "timeout": 30
+      },
+      "deepseek": {
+        "model": "deepseek-chat",
+        "api_key": "",
+        "base_url": "https://api.deepseek.com/",
+        "max_tokens": 4000,
+        "temperature": 0.3,
+        "timeout": 30
+      },
+      "openai": {
+        "model": "gpt-3.5-turbo",
+        "api_key": "",
+        "base_url": "https://api.openai.com/v1/",
+        "max_tokens": 4000,
+        "temperature": 0.3,
+        "timeout": 30
+      }
+    }
+  },
+  "keyword_extraction": {
+    "max_keywords_per_chunk": 8,
+    "min_keyword_length": 2,
+    "max_keyword_length": 20,
+    "enable_synonyms": true,
+    "enable_medical_terms": true,
+    "keyword_prefix": "#",
+    "extraction_methods": {
+      "local": {
+        "enabled": true,
+        "use_regex": true,
+        "use_frequency": true,
+        "use_medical_dict": true
+      },
+      "llm": {
+        "enabled": true,
+        "fallback_to_local": true,
+        "prompt_template": "请从以下医学文档片段中提取5-8个最重要的关键词，包括疾病名称、药物名称、治疗方法、症状等。每个关键词用逗号分隔：\n\n{chunk_content}"
+      }
+    }
+  },
+  "medical_knowledge": {
+    "enable_synonym_expansion": true,
+    "enable_chunk_classification": true,
+    "enable_dynamic_tagging": true,
+    "synonym_sources": [
+      "local_dict",
+      "medical_terminology",
+      "clinical_guidelines",
+      "drug_database"
+    ],
+    "chunk_classification": {
+      "enable_auto_classification": true,
+      "classification_confidence_threshold": 0.7,
+      "max_categories_per_chunk": 3,
+      "category_hierarchy": {
+        "clinical_guidelines": {
+          "keywords": ["指南", "规范", "标准", "共识", "建议", "推荐", "临床路径", "诊疗规范", "治疗指南", "管理指南"],
+          "subcategories": {
+            "diagnosis_guidelines": ["诊断指南", "诊断标准", "诊断流程", "鉴别诊断"],
+            "treatment_guidelines": ["治疗指南", "治疗方案", "治疗流程", "治疗标准"],
+            "management_guidelines": ["管理指南", "护理指南", "随访指南", "康复指南"]
+          }
+        },
+        "pharmacology": {
+          "keywords": ["药物", "用药", "给药", "剂量", "药理", "药代", "药效", "不良反应", "禁忌", "相互作用"],
+          "subcategories": {
+            "drug_therapy": ["药物治疗", "化疗", "靶向治疗", "免疫治疗", "激素治疗"],
+            "dosage_administration": ["剂量", "给药方式", "用法用量", "给药时间", "给药频次"],
+            "adverse_effects": ["不良反应", "副作用", "毒性", "过敏反应", "药物相互作用"]
+          }
+        },
+        "treatment_experience": {
+          "keywords": ["治疗经验", "临床经验", "病例", "疗效", "预后", "随访", "康复", "治疗效果"],
+          "subcategories": {
+            "case_studies": ["病例报告", "病例分析", "典型病例", "疑难病例"],
+            "treatment_outcomes": ["疗效评估", "治疗效果", "预后评估", "生存率", "缓解率"],
+            "clinical_experience": ["临床经验", "治疗心得", "专家经验", "实践总结"]
+          }
+        },
+        "psychology_mental_health": {
+          "keywords": ["心理", "精神", "情绪", "焦虑", "抑郁", "心理健康", "心理支持", "心理干预", "认知", "行为"],
+          "subcategories": {
+            "psychological_assessment": ["心理评估", "精神状态", "认知功能", "情绪状态"],
+            "psychological_intervention": ["心理治疗", "心理支持", "心理干预", "认知行为治疗"],
+            "mental_health_management": ["心理健康管理", "情绪管理", "压力管理", "心理康复"]
+          }
+        },
+        "nutrition_diet": {
+          "keywords": ["营养", "饮食", "膳食", "营养素", "热量", "蛋白质", "维生素", "矿物质", "营养支持", "肠内营养"],
+          "subcategories": {
+            "nutritional_assessment": ["营养评估", "营养状态", "营养筛查", "营养风险"],
+            "dietary_management": ["饮食管理", "膳食指导", "饮食禁忌", "特殊饮食"],
+            "nutritional_support": ["营养支持", "肠内营养", "肠外营养", "营养补充"]
+          }
+        },
+        "pain_management": {
+          "keywords": ["疼痛", "镇痛", "止痛", "疼痛管理", "疼痛评估", "疼痛治疗", "阿片类", "非阿片类"],
+          "subcategories": {
+            "pain_assessment": ["疼痛评估", "疼痛评分", "疼痛性质", "疼痛程度"],
+            "pain_treatment": ["疼痛治疗", "镇痛治疗", "药物镇痛", "非药物镇痛"],
+            "chronic_pain": ["慢性疼痛", "癌痛", "神经痛", "疼痛综合征"]
+          }
+        },
+        "cancer_complications": {
+           "keywords": ["并发症", "合并症", "不良事件", "肠梗阻", "消化道出血", "血栓", "黄疸", "特鲁索", "CIPN", "骨髓抑制", "恶心", "呕吐", "感染", "出血", "栓塞"],
+           "subcategories": {
+             "gastrointestinal_complications": ["肠梗阻", "消化道出血", "穿孔", "腹水", "黄疸", "肝功能异常"],
+             "hematologic_complications": ["骨髓抑制", "血小板减少", "贫血", "中性粒细胞减少", "凝血功能异常"],
+             "vascular_complications": ["血栓", "栓塞", "特鲁索症候群", "深静脉血栓", "肺栓塞"],
+             "neurologic_complications": ["CIPN", "化疗性周围神经病变", "脑转移", "颅内高压", "癫痫"],
+             "metabolic_complications": ["电解质紊乱", "肿瘤溶解综合征", "高钙血症", "低钠血症"],
+             "infectious_complications": ["感染", "发热性中性粒细胞减少", "机会性感染", "败血症"],
+             "treatment_related_complications": ["恶心", "呕吐", "腹泻", "口腔炎", "皮疹", "脱发", "疲劳"]
+           }
+         }
+      }
+    },
+    "disease_synonyms": {
+      "恶性肿瘤": ["癌症", "肿瘤", "癌", "恶性新生物", "恶性肿物", "癌肿"],
+      "肺癌": ["肺部恶性肿瘤", "支气管癌", "肺部癌症", "原发性肺癌", "肺腺癌", "肺鳞癌", "小细胞肺癌", "非小细胞肺癌"],
+      "乳腺癌": ["乳癌", "乳房癌", "乳腺恶性肿瘤", "乳腺恶性肿物"],
+      "胃癌": ["胃部恶性肿瘤", "胃腺癌", "胃恶性肿物"],
+      "肝癌": ["肝细胞癌", "肝部恶性肿瘤", "原发性肝癌", "肝恶性肿物"],
+      "结直肠癌": ["大肠癌", "结肠癌", "直肠癌", "结直肠恶性肿瘤"],
+      "糖尿病": ["DM", "diabetes", "糖代谢异常", "血糖异常"],
+      "高血压": ["HTN", "hypertension", "血压升高", "高血压病"],
+      "冠心病": ["CHD", "冠状动脉疾病", "冠状动脉粥样硬化", "缺血性心脏病"],
+      "脑卒中": ["中风", "脑血管意外", "CVA", "脑梗死", "脑出血"],
+      "慢性阻塞性肺疾病": ["COPD", "慢阻肺", "肺气肿", "慢性支气管炎"],
+      
+      "非小细胞肺癌": ["NSCLC", "non-small cell lung cancer", "非小细胞型肺癌"],
+      "小细胞肺癌": ["SCLC", "small cell lung cancer", "小细胞型肺癌"],
+      "肺腺癌": ["lung adenocarcinoma", "腺癌", "肺腺样癌"],
+      "肺鳞癌": ["lung squamous cell carcinoma", "鳞状细胞癌", "肺鳞状上皮癌"],
+      "大细胞肺癌": ["large cell lung cancer", "大细胞癌"],
+      
+      "浸润性导管癌": ["invasive ductal carcinoma", "IDC", "浸润性乳腺癌"],
+      "浸润性小叶癌": ["invasive lobular carcinoma", "ILC", "小叶癌"],
+      "导管原位癌": ["ductal carcinoma in situ", "DCIS", "原位癌"],
+      "小叶原位癌": ["lobular carcinoma in situ", "LCIS"],
+      "炎性乳腺癌": ["inflammatory breast cancer", "IBC"],
+      "三阴性乳腺癌": ["triple-negative breast cancer", "TNBC"],
+      "HER2阳性乳腺癌": ["HER2-positive breast cancer", "HER2+乳腺癌"],
+      "激素受体阳性乳腺癌": ["hormone receptor-positive breast cancer", "HR+乳腺癌"],
+      
+      "胰腺癌": ["pancreatic cancer", "胰腺恶性肿瘤", "胰癌"],
+      "胰腺导管腺癌": ["pancreatic ductal adenocarcinoma", "PDAC", "胰腺腺癌"],
+      "胰腺神经内分泌肿瘤": ["pancreatic neuroendocrine tumor", "PNET", "胰岛细胞瘤"],
+      "胰腺囊性肿瘤": ["pancreatic cystic neoplasm", "PCN"],
+      
+      "结肠癌": ["colon cancer", "结肠恶性肿瘤"],
+      "直肠癌": ["rectal cancer", "直肠恶性肿瘤"],
+      "肛管癌": ["anal cancer", "肛门癌", "肛管恶性肿瘤"],
+      "小肠癌": ["small bowel cancer", "小肠恶性肿瘤"],
+      
+      "胃腺癌": ["gastric adenocarcinoma", "胃腺样癌"],
+      "胃淋巴瘤": ["gastric lymphoma", "胃MALT淋巴瘤"],
+      "胃间质瘤": ["gastric GIST", "胃肠道间质瘤"],
+      
+      "肝细胞癌": ["hepatocellular carcinoma", "HCC", "肝细胞肝癌"],
+      "胆管癌": ["cholangiocarcinoma", "CCA", "胆管细胞癌"],
+      "肝内胆管癌": ["intrahepatic cholangiocarcinoma", "ICC"],
+      "肝外胆管癌": ["extrahepatic cholangiocarcinoma", "ECC"],
+      "胆囊癌": ["gallbladder cancer", "胆囊恶性肿瘤"],
+      
+      "白血病": ["leukemia", "血癌", "造血系统恶性肿瘤"],
+      "急性髓系白血病": ["acute myeloid leukemia", "AML", "急性髓性白血病"],
+      "急性淋巴细胞白血病": ["acute lymphoblastic leukemia", "ALL", "急性淋巴性白血病"],
+      "慢性髓系白血病": ["chronic myeloid leukemia", "CML", "慢性髓性白血病"],
+      "慢性淋巴细胞白血病": ["chronic lymphocytic leukemia", "CLL", "慢性淋巴性白血病"],
+      "急性早幼粒细胞白血病": ["acute promyelocytic leukemia", "APL", "M3型白血病"],
+      "毛细胞白血病": ["hairy cell leukemia", "HCL"],
+      
+      "淋巴瘤": ["lymphoma", "淋巴系统恶性肿瘤"],
+      "霍奇金淋巴瘤": ["Hodgkin lymphoma", "HL", "霍奇金病"],
+      "非霍奇金淋巴瘤": ["non-Hodgkin lymphoma", "NHL"],
+      "弥漫大B细胞淋巴瘤": ["diffuse large B-cell lymphoma", "DLBCL"],
+      "滤泡性淋巴瘤": ["follicular lymphoma", "FL"],
+      "套细胞淋巴瘤": ["mantle cell lymphoma", "MCL"],
+      "边缘区淋巴瘤": ["marginal zone lymphoma", "MZL"],
+      "T细胞淋巴瘤": ["T-cell lymphoma", "TCL"],
+      "NK/T细胞淋巴瘤": ["NK/T-cell lymphoma"],
+      "原发性中枢神经系统淋巴瘤": ["primary CNS lymphoma", "PCNSL"],
+      
+      "多发性骨髓瘤": ["multiple myeloma", "MM", "骨髓瘤"],
+      "浆细胞瘤": ["plasmacytoma", "孤立性浆细胞瘤"],
+      "轻链淀粉样变": ["light chain amyloidosis", "AL淀粉样变"],
+      
+      "甲状腺癌": ["thyroid cancer", "甲状腺恶性肿瘤"],
+      "甲状腺乳头状癌": ["papillary thyroid carcinoma", "PTC", "乳头状癌"],
+      "甲状腺滤泡癌": ["follicular thyroid carcinoma", "FTC", "滤泡癌"],
+      "甲状腺髓样癌": ["medullary thyroid carcinoma", "MTC", "髓样癌"],
+      "甲状腺未分化癌": ["anaplastic thyroid carcinoma", "ATC", "未分化癌"],
+      
+      "肾癌": ["kidney cancer", "肾恶性肿瘤", "肾细胞癌"],
+      "肾细胞癌": ["renal cell carcinoma", "RCC"],
+      "透明细胞肾癌": ["clear cell renal cell carcinoma", "ccRCC"],
+      "乳头状肾癌": ["papillary renal cell carcinoma", "pRCC"],
+      "嫌色细胞癌": ["chromophobe renal cell carcinoma", "chRCC"],
+      "肾盂癌": ["renal pelvis cancer", "肾盂尿路上皮癌"],
+      
+      "膀胱癌": ["bladder cancer", "膀胱恶性肿瘤"],
+      "膀胱尿路上皮癌": ["bladder urothelial carcinoma", "膀胱移行细胞癌"],
+      "膀胱鳞癌": ["bladder squamous cell carcinoma"],
+      "膀胱腺癌": ["bladder adenocarcinoma"],
+      
+      "前列腺癌": ["prostate cancer", "前列腺恶性肿瘤"],
+      "前列腺腺癌": ["prostate adenocarcinoma"],
+      "去势抵抗性前列腺癌": ["castration-resistant prostate cancer", "CRPC"],
+      "转移性前列腺癌": ["metastatic prostate cancer", "mPCa"],
+      
+      "卵巢癌": ["ovarian cancer", "卵巢恶性肿瘤"],
+      "卵巢上皮癌": ["ovarian epithelial cancer", "卵巢癌"],
+      "卵巢浆液性癌": ["ovarian serous carcinoma", "浆液性卵巢癌"],
+      "卵巢透明细胞癌": ["ovarian clear cell carcinoma"],
+      "卵巢子宫内膜样癌": ["ovarian endometrioid carcinoma"],
+      "卵巢黏液性癌": ["ovarian mucinous carcinoma"],
+      "卵巢生殖细胞肿瘤": ["ovarian germ cell tumor", "OGCT"],
+      
+      "宫颈癌": ["cervical cancer", "子宫颈癌", "宫颈恶性肿瘤"],
+      "宫颈鳞癌": ["cervical squamous cell carcinoma", "宫颈鳞状细胞癌"],
+      "宫颈腺癌": ["cervical adenocarcinoma", "宫颈腺样癌"],
+      "宫颈腺鳞癌": ["cervical adenosquamous carcinoma"],
+      
+      "子宫内膜癌": ["endometrial cancer", "子宫体癌", "子宫内膜恶性肿瘤"],
+      "子宫内膜腺癌": ["endometrial adenocarcinoma"],
+      "子宫肉瘤": ["uterine sarcoma", "子宫恶性间叶肿瘤"],
+      "子宫平滑肌肉瘤": ["uterine leiomyosarcoma", "LMS"],
+      
+      "食管癌": ["esophageal cancer", "食管恶性肿瘤"],
+      "食管鳞癌": ["esophageal squamous cell carcinoma", "ESCC"],
+      "食管腺癌": ["esophageal adenocarcinoma", "EAC"],
+      "胃食管结合部癌": ["gastroesophageal junction cancer", "GEJ癌"],
+      
+      "头颈部癌": ["head and neck cancer", "头颈部恶性肿瘤"],
+      "鼻咽癌": ["nasopharyngeal carcinoma", "NPC"],
+      "口咽癌": ["oropharyngeal cancer"],
+      "下咽癌": ["hypopharyngeal cancer"],
+      "喉癌": ["laryngeal cancer"],
+      "口腔癌": ["oral cancer", "口腔恶性肿瘤"],
+      "舌癌": ["tongue cancer"],
+      "唾液腺癌": ["salivary gland cancer"],
+      
+      "脑肿瘤": ["brain tumor", "颅内肿瘤", "脑恶性肿瘤"],
+      "胶质瘤": ["glioma", "神经胶质瘤"],
+      "胶质母细胞瘤": ["glioblastoma", "GBM", "胶质母细胞瘤"],
+      "星形细胞瘤": ["astrocytoma"],
+      "少突胶质细胞瘤": ["oligodendroglioma"],
+      "脑膜瘤": ["meningioma"],
+      "垂体瘤": ["pituitary tumor", "垂体腺瘤"],
+      "颅咽管瘤": ["craniopharyngioma"],
+      
+      "骨肉瘤": ["osteosarcoma", "骨恶性肿瘤"],
+      "软组织肉瘤": ["soft tissue sarcoma", "STS"],
+      "尤文肉瘤": ["Ewing sarcoma"],
+      "横纹肌肉瘤": ["rhabdomyosarcoma", "RMS"],
+      "脂肪肉瘤": ["liposarcoma"],
+      "平滑肌肉瘤": ["leiomyosarcoma", "LMS"],
+      "滑膜肉瘤": ["synovial sarcoma"],
+      "胃肠道间质瘤": ["gastrointestinal stromal tumor", "GIST"],
+      
+      "黑色素瘤": ["melanoma", "恶性黑色素瘤"],
+      "皮肤黑色素瘤": ["cutaneous melanoma"],
+      "眼黑色素瘤": ["ocular melanoma", "眼部黑色素瘤"],
+      "黏膜黑色素瘤": ["mucosal melanoma"],
+      
+      "神经内分泌肿瘤": ["neuroendocrine tumor", "NET", "神经内分泌癌"],
+      "胰岛细胞瘤": ["islet cell tumor", "胰岛瘤"],
+      "类癌": ["carcinoid tumor", "类癌综合征"],
+      "嗜铬细胞瘤": ["pheochromocytoma"],
+      "副神经节瘤": ["paraganglioma"]
+    },
+    "drug_synonyms": {
+      "阿司匹林": ["乙酰水杨酸", "ASA", "aspirin"],
+      "布洛芬": ["异丁苯丙酸", "ibuprofen"],
+      "对乙酰氨基酚": ["扑热息痛", "醋氨酚", "paracetamol", "acetaminophen"],
+      "吗啡": ["硫酸吗啡", "盐酸吗啡", "morphine"],
+      "胰岛素": ["insulin", "人胰岛素", "重组胰岛素"],
+      "美托洛尔": ["metoprolol", "倍他乐克", "β受体阻滞剂"],
+      "氨氯地平": ["amlodipine", "络活喜", "钙通道阻滞剂"],
+      "阿托伐他汀": ["atorvastatin", "立普妥", "他汀类"],
+      "奥美拉唑": ["omeprazole", "洛赛克", "质子泵抑制剂"],
+      "二甲双胍": ["metformin", "格华止", "双胍类"],
+      "卡托普利": ["captopril", "开博通", "ACE抑制剂"],
+      "硝苯地平": ["nifedipine", "心痛定", "钙拮抗剂"],
+      
+      "紫杉醇": ["paclitaxel", "泰素", "白蛋白紫杉醇", "nab-paclitaxel"],
+      "多西他赛": ["docetaxel", "泰索帝", "多西紫杉醇"],
+      "卡铂": ["carboplatin", "卡波铂"],
+      "顺铂": ["cisplatin", "顺氯氨铂"],
+      "奥沙利铂": ["oxaliplatin", "乐沙定"],
+      "环磷酰胺": ["cyclophosphamide", "CTX", "安道生"],
+      "阿霉素": ["doxorubicin", "多柔比星", "表阿霉素", "epirubicin"],
+      "5-氟尿嘧啶": ["5-FU", "fluorouracil", "氟尿嘧啶"],
+      "卡培他滨": ["capecitabine", "希罗达", "Xeloda"],
+      "吉西他滨": ["gemcitabine", "健择"],
+      "长春瑞滨": ["vinorelbine", "诺维本"],
+      "长春新碱": ["vincristine", "VCR"],
+      "长春花碱": ["vinblastine", "VLB"],
+      "依托泊苷": ["etoposide", "VP-16", "足叶乙苷"],
+      "伊立替康": ["irinotecan", "开普拓", "CPT-11"],
+      "替莫唑胺": ["temozolomide", "蒂清"],
+      "丝裂霉素": ["mitomycin", "MMC"],
+      "博来霉素": ["bleomycin", "BLM"],
+      "放线菌素D": ["actinomycin D", "更生霉素"],
+      
+      "他莫昔芬": ["tamoxifen", "三苯氧胺", "诺瓦得士"],
+      "阿那曲唑": ["anastrozole", "瑞宁得"],
+      "来曲唑": ["letrozole", "弗隆"],
+      "依西美坦": ["exemestane", "阿诺新"],
+      "氟维司群": ["fulvestrant", "芙仕得"],
+      "曲妥珠单抗": ["trastuzumab", "赫赛汀", "Herceptin"],
+      "帕妥珠单抗": ["pertuzumab", "帕捷特"],
+      "T-DM1": ["ado-trastuzumab emtansine", "卡德西拉"],
+      "拉帕替尼": ["lapatinib", "泰立沙"],
+      "哌柏西利": ["palbociclib", "爱博新"],
+      "瑞博西利": ["ribociclib", "瑞博西尼"],
+      "阿贝西利": ["abemaciclib", "唯择"],
+      "依维莫司": ["everolimus", "飞尼妥"],
+      "奥拉帕利": ["olaparib", "利普卓"],
+      "尼拉帕利": ["niraparib", "则乐"],
+      "鲁卡帕利": ["rucaparib", "卢卡帕尼"],
+      
+      "吉非替尼": ["gefitinib", "易瑞沙", "Iressa"],
+      "厄洛替尼": ["erlotinib", "特罗凯", "Tarceva"],
+      "阿法替尼": ["afatinib", "吉泰瑞"],
+      "奥希替尼": ["osimertinib", "泰瑞沙", "Tagrisso"],
+      "达克替尼": ["dacomitinib", "达可替尼"],
+      "克唑替尼": ["crizotinib", "赛可瑞", "Xalkori"],
+      "阿来替尼": ["alectinib", "安圣莎"],
+      "塞瑞替尼": ["ceritinib", "赞可达"],
+      "劳拉替尼": ["lorlatinib", "洛拉替尼"],
+      "贝伐珠单抗": ["bevacizumab", "安维汀", "Avastin"],
+      "雷莫芦单抗": ["ramucirumab", "希冉择"],
+      "安罗替尼": ["anlotinib", "福可维"],
+      "阿帕替尼": ["apatinib", "艾坦"],
+      "仑伐替尼": ["lenvatinib", "乐卫玛"],
+      "卡博替尼": ["cabozantinib", "卡博赞替尼"],
+      "帕博利珠单抗": ["pembrolizumab", "可瑞达", "Keytruda"],
+      "纳武利尤单抗": ["nivolumab", "欧狄沃", "Opdivo"],
+      "阿替利珠单抗": ["atezolizumab", "泰圣奇"],
+      "度伐利尤单抗": ["durvalumab", "英飞凡"],
+      "信迪利单抗": ["sintilimab", "达伯舒"],
+      "替雷利珠单抗": ["tislelizumab", "百泽安"],
+      "卡瑞利珠单抗": ["camrelizumab", "艾瑞卡"],
+      
+      "伊马替尼": ["imatinib", "格列卫", "Gleevec"],
+      "达沙替尼": ["dasatinib", "施达赛", "Sprycel"],
+      "尼洛替尼": ["nilotinib", "达希纳", "Tasigna"],
+      "博舒替尼": ["bosutinib", "博苏利夫"],
+      "普纳替尼": ["ponatinib", "普纳替尼"],
+      "阿糖胞苷": ["cytarabine", "Ara-C", "胞嘧啶阿拉伯糖苷"],
+      "柔红霉素": ["daunorubicin", "DNR"],
+      "米托蒽醌": ["mitoxantrone", "米托蒽醌"],
+      "6-巯基嘌呤": ["6-mercaptopurine", "6-MP"],
+      "甲氨蝶呤": ["methotrexate", "MTX"],
+      "硫鸟嘌呤": ["thioguanine", "6-TG"],
+      "羟基脲": ["hydroxyurea", "羟脲"],
+      "阿扎胞苷": ["azacitidine", "维达莎"],
+      "地西他滨": ["decitabine", "达珂"],
+      "维奈托克": ["venetoclax", "维奈克拉"],
+      "伊布替尼": ["ibrutinib", "亿珂"],
+      "阿卡替尼": ["acalabrutinib", "阿卡拉布替尼"],
+      "利妥昔单抗": ["rituximab", "美罗华", "Rituxan"],
+      "奥妥珠单抗": ["obinutuzumab", "加泽瓦"],
+      "本妥昔单抗": ["brentuximab vedotin", "安适利"],
+      "硼替佐米": ["bortezomib", "万珂", "Velcade"],
+      "卡非佐米": ["carfilzomib", "恺福佐米"],
+      "伊沙佐米": ["ixazomib", "伊沙佐米"],
+      "来那度胺": ["lenalidomide", "雷利度胺", "Revlimid"],
+      "泊马度胺": ["pomalidomide", "泊马度胺"],
+      "沙利度胺": ["thalidomide", "反应停"],
+      "达雷妥尤单抗": ["daratumumab", "兆珂"],
+      "艾沙康唑": ["isatuximab", "艾沙康唑"],
+      
+      "索拉非尼": ["sorafenib", "多吉美", "Nexavar"],
+      "瑞戈非尼": ["regorafenib", "拜万戈"],
+      "乐伐替尼": ["lenvatinib", "乐卫玛"],
+      "阿替利珠单抗": ["atezolizumab", "泰圣奇"],
+      "雷莫芦单抗": ["ramucirumab", "希冉择"],
+      "西妥昔单抗": ["cetuximab", "爱必妥", "Erbitux"],
+      "帕尼单抗": ["panitumumab", "维克替比"],
+      "贝伐珠单抗": ["bevacizumab", "安维汀"],
+      "阿柏西普": ["aflibercept", "艾力雅"],
+      "曲氟尿苷替匹嘧啶": ["trifluridine/tipiracil", "朗斯弗"],
+      "瑞戈非尼": ["regorafenib", "拜万戈"],
+      "呋喹替尼": ["fruquintinib", "爱优特"],
+      
+      "舒尼替尼": ["sunitinib", "索坦", "Sutent"],
+      "帕唑帕尼": ["pazopanib", "培唑帕尼"],
+      "阿昔替尼": ["axitinib", "英立达"],
+      "卡博替尼": ["cabozantinib", "卡博赞替尼"],
+      "纳武利尤单抗": ["nivolumab", "欧狄沃"],
+      "帕博利珠单抗": ["pembrolizumab", "可瑞达"],
+      "阿维鲁单抗": ["avelumab", "巴文西亚"],
+      "依维莫司": ["everolimus", "飞尼妥"],
+      "替西罗莫司": ["temsirolimus", "托瑞塞"],
+      
+      "吉西他滨": ["gemcitabine", "健择"],
+      "白蛋白紫杉醇": ["nab-paclitaxel", "白蛋白结合型紫杉醇"],
+      "FOLFIRINOX": ["氟尿嘧啶+亚叶酸钙+伊立替康+奥沙利铂"],
+      "厄洛替尼": ["erlotinib", "特罗凯"],
+      "奥拉帕利": ["olaparib", "利普卓"],
+      
+      "左甲状腺素": ["levothyroxine", "优甲乐", "雷替斯"],
+      "甲巯咪唑": ["methimazole", "他巴唑"],
+      "丙硫氧嘧啶": ["propylthiouracil", "PTU"],
+      "放射性碘": ["radioactive iodine", "I-131"],
+      "索拉非尼": ["sorafenib", "多吉美"],
+      "乐伐替尼": ["lenvatinib", "乐卫玛"],
+      "凡德他尼": ["vandetanib", "凡德他尼"],
+      "卡博替尼": ["cabozantinib", "卡博赞替尼"],
+      
+      "顺铂": ["cisplatin", "DDP"],
+      "卡铂": ["carboplatin", "CBP"],
+      "紫杉醇": ["paclitaxel", "PTX"],
+      "贝伐珠单抗": ["bevacizumab", "BEV"],
+      "帕博利珠单抗": ["pembrolizumab", "PD-1抑制剂"],
+      "纳武利尤单抗": ["nivolumab", "PD-1抑制剂"],
+      "奥拉帕利": ["olaparib", "PARP抑制剂"],
+      "尼拉帕利": ["niraparib", "PARP抑制剂"],
+      "鲁卡帕利": ["rucaparib", "PARP抑制剂"],
+      "安罗替尼": ["anlotinib", "抗血管生成药"],
+      "阿帕替尼": ["apatinib", "抗血管生成药"]
+    },
+    "cancer_drug_classification": {
+      "肺癌": {
+        "化疗药物": ["紫杉醇", "卡铂", "顺铂", "吉西他滨", "多西他赛", "依托泊苷", "伊立替康"],
+        "靶向药物": ["吉非替尼", "厄洛替尼", "阿法替尼", "奥希替尼", "达克替尼", "克唑替尼", "阿来替尼", "塞瑞替尼", "劳拉替尼"],
+        "抗血管生成药": ["贝伐珠单抗", "雷莫芦单抗", "安罗替尼"],
+        "免疫治疗": ["帕博利珠单抗", "纳武利尤单抗", "阿替利珠单抗", "度伐利尤单抗", "信迪利单抗", "替雷利珠单抗", "卡瑞利珠单抗"]
+      },
+      "乳腺癌": {
+        "化疗药物": ["紫杉醇", "多西他赛", "阿霉素", "环磷酰胺", "卡铂", "卡培他滨"],
+        "内分泌治疗": ["他莫昔芬", "阿那曲唑", "来曲唑", "依西美坦", "氟维司群"],
+        "HER2靶向药物": ["曲妥珠单抗", "帕妥珠单抗", "T-DM1", "拉帕替尼"],
+        "CDK4/6抑制剂": ["哌柏西利", "瑞博西利", "阿贝西利"],
+        "mTOR抑制剂": ["依维莫司"],
+        "PARP抑制剂": ["奥拉帕利", "尼拉帕利", "鲁卡帕利"]
+      },
+      "胰腺癌": {
+        "化疗药物": ["吉西他滨", "白蛋白紫杉醇", "5-氟尿嘧啶", "伊立替康", "奥沙利铂"],
+        "靶向药物": ["厄洛替尼"],
+        "PARP抑制剂": ["奥拉帕利"],
+        "联合方案": ["FOLFIRINOX"]
+      },
+      "结直肠癌": {
+        "化疗药物": ["5-氟尿嘧啶", "卡培他滨", "奥沙利铂", "伊立替康"],
+        "靶向药物": ["西妥昔单抗", "帕尼单抗", "贝伐珠单抗", "雷莫芦单抗", "阿柏西普"],
+        "多激酶抑制剂": ["瑞戈非尼", "呋喹替尼"],
+        "其他": ["曲氟尿苷替匹嘧啶"]
+      },
+      "胃癌": {
+        "化疗药物": ["5-氟尿嘧啶", "卡培他滨", "奥沙利铂", "顺铂", "紫杉醇", "多西他赛", "伊立替康"],
+        "靶向药物": ["曲妥珠单抗", "雷莫芦单抗"],
+        "免疫治疗": ["帕博利珠单抗", "纳武利尤单抗"]
+      },
+      "肝癌": {
+        "多激酶抑制剂": ["索拉非尼", "瑞戈非尼", "乐伐替尼", "卡博替尼"],
+        "免疫治疗": ["阿替利珠单抗", "帕博利珠单抗", "纳武利尤单抗"],
+        "抗血管生成药": ["贝伐珠单抗", "雷莫芦单抗"]
+      },
+      "肾癌": {
+        "多激酶抑制剂": ["舒尼替尼", "帕唑帕尼", "阿昔替尼", "卡博替尼", "仑伐替尼"],
+        "mTOR抑制剂": ["依维莫司", "替西罗莫司"],
+        "免疫治疗": ["纳武利尤单抗", "帕博利珠单抗", "阿维鲁单抗"]
+      },
+      "白血病": {
+        "化疗药物": ["阿糖胞苷", "柔红霉素", "米托蒽醌", "6-巯基嘌呤", "甲氨蝶呤", "硫鸟嘌呤"],
+        "靶向药物": ["伊马替尼", "达沙替尼", "尼洛替尼", "博舒替尼", "普纳替尼"],
+        "去甲基化药物": ["阿扎胞苷", "地西他滨"],
+        "BCL-2抑制剂": ["维奈托克"],
+        "BTK抑制剂": ["伊布替尼", "阿卡替尼"],
+        "其他": ["羟基脲"]
+      },
+      "淋巴瘤": {
+        "化疗药物": ["环磷酰胺", "阿霉素", "长春新碱", "长春花碱", "依托泊苷", "阿糖胞苷", "甲氨蝶呤"],
+        "单克隆抗体": ["利妥昔单抗", "奥妥珠单抗", "本妥昔单抗"],
+        "蛋白酶体抑制剂": ["硼替佐米", "卡非佐米", "伊沙佐米"],
+        "免疫调节剂": ["来那度胺", "泊马度胺", "沙利度胺"],
+        "抗CD38单抗": ["达雷妥尤单抗", "艾沙康唑"],
+        "BTK抑制剂": ["伊布替尼"]
+      },
+      "甲状腺癌": {
+        "激素治疗": ["左甲状腺素"],
+        "抗甲状腺药物": ["甲巯咪唑", "丙硫氧嘧啶"],
+        "放射性治疗": ["放射性碘"],
+        "多激酶抑制剂": ["索拉非尼", "乐伐替尼", "凡德他尼", "卡博替尼"]
+      },
+      "妇科肿瘤": {
+        "化疗药物": ["顺铂", "卡铂", "紫杉醇", "贝伐珠单抗"],
+        "免疫治疗": ["帕博利珠单抗", "纳武利尤单抗"],
+        "PARP抑制剂": ["奥拉帕利", "尼拉帕利", "鲁卡帕利"],
+        "抗血管生成药": ["安罗替尼", "阿帕替尼"]
+      }
+    },
+    "symptom_synonyms": {
+      "发热": ["发烧", "体温升高", "热症", "发热症状", "体温异常"],
+      "疼痛": ["痛", "疼", "痛感", "疼痛感", "疼痛症状"],
+      "恶心": ["想吐", "恶心感", "恶心症状"],
+      "呕吐": ["吐", "呕", "呕吐症状"],
+      "咳嗽": ["咳", "咳嗽症状", "干咳", "湿咳"],
+      "呼吸困难": ["气短", "气促", "呼吸急促", "喘息"],
+      "胸痛": ["胸部疼痛", "胸闷", "胸部不适"],
+      "腹痛": ["肚子痛", "腹部疼痛", "腹部不适"],
+      "头痛": ["头疼", "头部疼痛", "偏头痛"],
+      "乏力": ["疲劳", "无力", "疲乏", "体力不支"],
+      "食欲不振": ["食欲减退", "不想吃饭", "厌食"],
+      "失眠": ["睡眠障碍", "入睡困难", "睡眠不佳"]
+    },
+    "treatment_synonyms": {
+      "手术": ["外科手术", "手术治疗", "外科治疗", "切除术"],
+      "化疗": ["化学治疗", "抗肿瘤化疗", "细胞毒性治疗"],
+      "放疗": ["放射治疗", "放射线治疗", "辐射治疗"],
+      "靶向治疗": ["分子靶向治疗", "精准治疗", "个体化治疗"],
+      "免疫治疗": ["生物免疫治疗", "免疫调节治疗"],
+      "康复治疗": ["康复训练", "物理治疗", "功能锻炼"],
+      "心理治疗": ["心理干预", "心理支持", "认知行为治疗"],
+      "营养支持": ["营养治疗", "肠内营养", "肠外营养"]
+    },
+    "examination_synonyms": {
+      "CT": ["计算机断层扫描", "电子计算机断层扫描", "computed tomography"],
+      "MRI": ["磁共振成像", "核磁共振", "magnetic resonance imaging"],
+      "B超": ["超声检查", "彩超", "ultrasound"],
+      "X线": ["X光", "胸片", "X-ray"],
+      "内镜": ["胃镜", "肠镜", "支气管镜", "endoscopy"],
+      "病理": ["病理检查", "组织病理", "细胞病理"],
+      "血常规": ["血液常规检查", "全血细胞计数", "CBC"],
+      "生化": ["生化检查", "血生化", "生化指标"]
+    },
+    "complication_synonyms": {
+      "并发症": ["合并症", "不良事件", "副作用", "并发疾病", "继发疾病", "治疗相关并发症"],
+      "肠梗阻": ["机械性肠梗阻", "麻痹性肠梗阻", "肠道梗阻", "肠管梗阻"],
+      "消化道出血": ["上消化道出血", "下消化道出血", "胃肠道出血", "便血", "呕血", "黑便"],
+      "血栓": ["深静脉血栓", "肺栓塞", "血栓栓塞", "静脉血栓栓塞症", "VTE"],
+      "黄疸": ["胆红素升高", "皮肤黄染", "巩膜黄染", "肝功能异常"],
+      "特鲁索": ["特鲁索症候群", "Trousseau综合征", "肿瘤相关血栓"],
+      "CIPN": ["化疗诱导周围神经病变", "化疗性神经病变", "周围神经毒性", "神经病变"],
+      "骨髓抑制": ["骨髓功能抑制", "造血功能抑制", "血细胞减少", "全血细胞减少"],
+      "感染": ["细菌感染", "病毒感染", "真菌感染", "机会性感染", "院内感染", "发热性中性粒细胞减少症", "FN"],
+      "出血": ["大出血", "颅内出血", "术后出血", "凝血功能异常", "血小板减少性出血"],
+      "恶心呕吐": ["化疗性恶心呕吐", "CINV", "急性呕吐", "延迟性呕吐", "预期性呕吐"],
+      "电解质紊乱": ["低钠血症", "高钙血症", "低钾血症", "低镁血症", "酸碱平衡失调"],
+      "肿瘤溶解综合征": ["TLS", "急性肿瘤溶解综合征", "细胞溶解综合征"]
+    }
+  },
+  "chunk_processing": {
+    "chunk_boundary_marker": "[CHUNK_BOUNDARY]",
+    "target_chunk_size": 1000,
+    "preserve_formatting": true,
+    "add_keywords_at_beginning": true,
+    "keyword_separator": " ",
+    "max_keywords_display": 6
+  },
+  "output": {
+    "save_original": true,
+    "output_suffix": "_with_keywords",
+    "create_backup": true,
+    "log_level": "INFO"
+  }
+}

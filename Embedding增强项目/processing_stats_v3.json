@@ -1,0 +1,28 @@
+{
+  "processing_info": {
+    "total_lines_processed": 1091,
+    "boundary_candidates_found": 512,
+    "chunks_created": 355,
+    "forced_splits": 270
+  },
+  "statistics": {
+    "total_chunks": 355,
+    "average_chunk_size": 397.0281690140845,
+    "average_quality_score": 0.27942857142857147,
+    "boundary_quality_score": 0.0,
+    "size_distribution": {
+      "small": 161,
+      "medium": 181,
+      "large": 13,
+      "extra_large": 0
+    }
+  },
+  "quality_analysis": {
+    "high_quality_chunks": 0,
+    "medium_quality_chunks": 0,
+    "low_quality_chunks": 1,
+    "quality_scores": [
+      0.27942857142857147
+    ]
+  }
+}

@@ -1,0 +1,1293 @@
+{
+  "summary": {
+    "total_chunks": 187,
+    "overall_quality_score": 0.510909090909091,
+    "total_issues": 150,
+    "high_severity_issues": 3
+  },
+  "size_analysis": {
+    "total_chunks": 187,
+    "total_characters": 147777,
+    "average_size": 790.2513368983957,
+    "median_size": 607,
+    "min_size": 229,
+    "max_size": 4254,
+    "std_deviation": 588.2721884238064,
+    "size_distribution": {
+      "very_small": 0,
+      "small": 72,
+      "medium": 68,
+      "large": 39,
+      "very_large": 8
+    }
+  },
+  "boundary_analysis": {
+    "boundary_types": {
+      "markdown_heading": 0,
+      "chinese_major_section": 0,
+      "chinese_sub_section": 0,
+      "numeric_section": 40,
+      "table_title": 0,
+      "empty_line": 0,
+      "other": 147
+    },
+    "average_quality_score": 0.5272727272727273,
+    "quality_scores": [
+      0.30000000000000004,
+      0.30000000000000004,
+      0.30000000000000004,
+      0.30000000000000004,
+      0.5,
+      0.30000000000000004,
+      0.30000000000000004,
+      0.30000000000000004,
+      0.4,
+      0.4,
+      0.30000000000000004,
+      0.30000000000000004,
+      0.30000000000000004,
+      0.30000000000000004,
+      0.4,
+      0.5,
+      0.2,
+      0.5,
+      0.8,
+      0.4,
+      0.6,
+      0.6,
+      0.9,
+      0.4,
+      0.5,
+      0.5,
+      0.7000000000000001,
+      0.4,
+      0.5,
+      0.9,
+      0.5,
+      0.4,
+      0.5,
+      0.9,
+      1.0,
+      0.5,
+      0.5,
+      0.7000000000000001,
+      0.30000000000000004,
+      0.5,
+      0.6,
+      0.5,
+      0.7000000000000001,
+      0.30000000000000004,
+      0.6,
+      0.6,
+      0.4,
+      0.5,
+      1.0,
+      0.6,
+      0.7000000000000001,
+      0.7000000000000001,
+      0.30000000000000004,
+      0.6,
+      0.5,
+      0.5,
+      0.9,
+      0.2,
+      0.5,
+      0.5,
+      0.5,
+      0.6,
+      0.9,
+      0.8,
+      0.2,
+      0.30000000000000004,
+      0.9,
+      0.9,
+      0.8,
+      0.30000000000000004,
+      0.5,
+      0.7000000000000001,
+      0.9,
+      0.9,
+      0.5,
+      0.30000000000000004,
+      0.7000000000000001,
+      0.8,
+      0.5,
+      0.9,
+      1.0,
+      0.5,
+      0.30000000000000004,
+      0.5,
+      0.30000000000000004,
+      0.6,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.9,
+      0.5,
+      0.5,
+      0.7000000000000001,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.30000000000000004,
+      0.5,
+      0.2,
+      0.5,
+      0.30000000000000004,
+      0.5,
+      0.6,
+      0.5,
+      0.30000000000000004,
+      0.9,
+      0.5,
+      0.4,
+      0.9,
+      0.5,
+      0.2,
+      0.5,
+      0.9,
+      0.9,
+      0.5,
+      0.6,
+      0.5,
+      0.4,
+      0.5,
+      0.6,
+      0.7000000000000001,
+      0.9,
+      0.2,
+      0.5,
+      0.5,
+      0.4,
+      0.5,
+      0.5,
+      0.5,
+      0.6,
+      0.2,
+      0.6,
+      0.5,
+      0.4,
+      0.5,
+      0.4,
+      0.5,
+      0.9,
+      0.30000000000000004,
+      0.5,
+      0.7000000000000001,
+      0.9,
+      0.7000000000000001,
+      0.5,
+      0.9,
+      0.4,
+      0.4,
+      0.5,
+      0.9,
+      0.6,
+      0.30000000000000004,
+      0.5,
+      0.30000000000000004,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.30000000000000004,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.0
+    ]
+  },
+  "structure_analysis": {
+    "chunks_with_tables": 53,
+    "chunks_with_lists": 0,
+    "chunks_with_headings": 0,
+    "chunks_with_references": 102,
+    "average_lines_per_chunk": 9.20855614973262,
+    "content_types": {
+      "text": 107,
+      "table": 53,
+      "reference": 102
+    }
+  },
+  "issues": [
+    {
+      "type": "poor_boundary",
+      "chunk_index": 0,
+      "description": "分块 1 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "====== 文档开始 ======"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 1,
+      "description": "分块 2 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<15># 版权所有，侵权必究！"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 2,
+      "description": "分块 3 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<27># 中国临床肿瘤学会指南工作委员会"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 3,
+      "description": "分块 4 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<50># 专家组成员（以姓氏汉语拼音为序）"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 4,
+      "description": "分块 5 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<74>孙涛 辽宁省肿瘤医院（内科）"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 5,
+      "description": "分块 6 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<97>CSCO 诊疗指南证据类别·1"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 6,
+      "description": "分块 7 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<118># 目录"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 7,
+      "description": "分块 8 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<144># 六、乳腺癌脑转移·132"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 8,
+      "description": "分块 9 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<163># 八、生物类似药·187"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 9,
+      "description": "分块 10 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<181>CSCO诊疗指南推荐等级"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 10,
+      "description": "分块 11 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<187># 一、乳腺癌的诊断及检查"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 11,
+      "description": "分块 12 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<221># （五）激素受体阳性乳腺癌新辅助治疗"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 12,
+      "description": "分块 13 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<237># （四）激素受体阳性乳腺癌辅助治疗"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 13,
+      "description": "分块 14 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<251># （三）三阴性晚期乳腺癌解救治疗"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 14,
+      "description": "分块 15 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<267># （五）HER-2低表达晚期乳腺癌解救治疗"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 15,
+      "description": "分块 16 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<283># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 16,
+      "description": "分块 17 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<293># （二）病理学诊断"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 17,
+      "description": "分块 18 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<297># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 19,
+      "description": "分块 20 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<314># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 20,
+      "description": "分块 21 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<320><table><tr><td colspan=\"2\">HER-2IHC2+，HER-2ISH 双探针检测结果判读</td><td>HER-2状态</td></tr><tr><td>HER-2/CEP17≥2.0，且平均HER-2拷 贝数/细胞≥4.0</td><td>ISH阳性</td><td>HER-2阳性</td></tr><tr><td>HER-2/CEP17&lt;2.0 且平均 HER-2 拷ISH阴性 贝数/细胞&lt;4.0</td><td></td><td>HER-2低表达</td></tr><tr><td>HER-2/CEP17&lt;2.0，平均HER-2拷贝 数/细胞≥6.0³</td><td>这种情况建议增加计数细胞，如果结果 维持不变，则判为ISH阳性</td><td>HER-2阳性</td></tr><tr><td>HER-2/CEP17&lt;2.0且平均HER-2拷 贝数/细胞&lt;6.0，但≥4.0</td><td>这种情况建议重新计数至少20个细胞 核中的信号，如果结果改变，则对两次 结果进行综合判断分析</td><td></td></tr><tr><td>HER-2/CEP17≥2.0，但平均HER-2 拷贝数/细胞&lt;4.04</td><td>这种情况建议增加计数细胞，如果结果 维持不变，则判为ISH阴性。建议在报 告中备注</td><td>HER-2低表达</td></tr></table>"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 23,
+      "description": "分块 24 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<340># PD-L1免疫组化判读评估"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 24,
+      "description": "分块 25 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<348># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 25,
+      "description": "分块 26 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<357># 乳腺浸润性癌（未经新辅助治疗）TILs评估标准"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 27,
+      "description": "分块 28 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<375># 1.Miller&Payne评估系统"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 28,
+      "description": "分块 29 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<387># 3.AJCCypTNM分期评估系统"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 30,
+      "description": "分块 31 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<400># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 31,
+      "description": "分块 32 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<408># 二、乳腺癌的术前新辅助治疗"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 32,
+      "description": "分块 33 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<414># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 35,
+      "description": "分块 36 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<449># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 38,
+      "description": "分块 39 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<469>HER-2阳性乳腺癌术前治疗常用方案"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 39,
+      "description": "分块 40 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<497># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 40,
+      "description": "分块 41 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<505># （四）三阴性乳腺癌新辅助治疗"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 41,
+      "description": "分块 42 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<525># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 43,
+      "description": "分块 44 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<537>新辅助治疗常用方案"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 44,
+      "description": "分块 45 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<561># 新辅助治疗后三阴性患者的辅助治疗1"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 45,
+      "description": "分块 46 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<573># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 46,
+      "description": "分块 47 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<599># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 47,
+      "description": "分块 48 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<610># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 49,
+      "description": "分块 50 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<625>2.后续强化"
+    },
+    {
+      "type": "too_large",
+      "chunk_index": 52,
+      "description": "分块 53 过大 (3510 字符)",
+      "severity": "high",
+      "chunk_preview": "<645>HER-2阳性辅助治疗常用方案\n\n<647><table><tr><td>方案</td><td>剂量</td><td>用药时间</td><td>时间及周期</td></tr><tr><td ..."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 52,
+      "description": "分块 53 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<645>HER-2阳性辅助治疗常用方案"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 53,
+      "description": "分块 54 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<661># ·TH（周疗紫杉醇 $^ +$ 曲妥珠单抗）"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 54,
+      "description": "分块 55 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<675>2.后续强化"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 55,
+      "description": "分块 56 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<687>（3）化疗时应注意化疗药物的给药顺序、输注时间和剂量强度，严格按照药品说明和配伍禁忌"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 57,
+      "description": "分块 58 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<701>10 既往临床研究中，AC或AC-T方案中的蒽环类以多柔比星为主。但考虑到药物可及性，结合我国临床实践，蒽环类药物可以选择多柔比星（常用推荐剂量为50\\~60mg/m），也可选择吡柔比星（常用推荐剂量为 $5 0 \\mathrm { m g / m } ^ { 2 }$ ）或表柔比星（常用推荐剂量为 $9 0 { \\sim } 1 0 0 \\mathrm { m g / m } ^ { 2 }$ ）"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 58,
+      "description": "分块 59 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<705>辅助化疗常用方案（续）"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 59,
+      "description": "分块 60 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<723># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 60,
+      "description": "分块 61 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<732>（2）对于ER弱阳性患者（阳性率1%\\~10%），其生物学行为与ER阴性相似，因此不建议放弃辅助化疗，在完成辅助化疗后，可酌情考虑进行辅助内分泌治疗。但对于绝经前患者，如ER弱阳，不建议采用卵巢功能抑制联合口服内分泌药物的方案。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 61,
+      "description": "分块 62 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<758>（2）后续强化"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 64,
+      "description": "分块 65 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<788>（2）后续强化"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 65,
+      "description": "分块 66 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<792># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 69,
+      "description": "分块 70 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<820><table><tr><td>分层</td><td>级推荐</td><td>I级推荐</td><td>级推荐</td></tr><tr><td>腋窝淋巴结阴 性，T≤5cm, 切缘≥1mm</td><td>无术后放疗[1B]</td><td></td><td>含有多项高危因素的患者 可考虑术后放疗[2B]8</td></tr><tr><td>腋窝淋巴结阴 性，T&gt;5cm, 或切缘&lt;1mm</td><td>考虑包括胸壁±区域淋巴 结在内的术后放疗［2A]</td><td>低复发风险患者可考虑 豁免术后放疗[2B]8</td><td></td></tr><tr><td>腋窝淋巴结1~ 3个阳性</td><td>包括胸壁+区域淋巴结在 内的术后放疗，对未行腋 窝清扫的患者，需要包括 未清扫的高危腋窝[1B]</td><td>低复发风险患者可考虑 豁免术后放疗[2B]8</td><td></td></tr><tr><td>腋窝淋巴结 ≥4个阳性</td><td>胸壁+完整的区域淋巴结 放疗（包括未清扫的高危 腋窝）[1A]</td><td></td><td></td></tr><tr><td>切缘阳性</td><td>再次手术切除至阴性切缘； 如无法再次手术，行胸壁± 区域淋巴结在内的术后放疗</td><td></td><td></td></tr></table>"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 70,
+      "description": "分块 71 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<830># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 74,
+      "description": "分块 75 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<852>（2）腋窝淋巴结区放疗：已经行完整清扫的腋窝淋巴结范围，除非有腋窝淋巴结包膜外侵犯或者腋窝淋巴结残留，术后放疗无须包括低位腋窝。在cN，前哨淋巴结阳性的早期乳腺癌患者，有越来越多的证据提示，如果腋窝淋巴结清扫的病理结果不会对辅助治疗决策产生影响，则可以豁免腋窝清扫。对于这部分患者的放疗决策，不同的研究方案有一定差异。例如，符合Z0011研究人组条件的患者，根据该研究结果建议采用乳房高位切线野，而不是完整的腋窝放疗。EORTC10981-22023AMAROS研究10年随访结果显示，在前哨淋巴结宏转移的患者中，腋窝放疗可以获得和腋窝淋巴结清扫相似的腋窝控制率，而且腋窝放疗的上肢淋巴水肿发生率显著低于腋窝淋巴结清扫。SENOMAC研究人组前哨淋巴结宏转移1\\~2个，其中纳入了36%的乳房切除患者，并且在腋窝清扫和豁免腋窝清扫组都有近$90 \\%$ 患者接受了区域淋巴结的术后放疗，两组的5年OS率和RFS率差异均无统计学意义[57]，但其中不同国家区域淋巴结的照射范围有较大差异[58]。因此，这些高证据级别的研究提示：在区域淋巴结放疗保驾下，前哨淋巴结阳性的患者豁免腋窝淋巴结清扫是安全的。本指南鼓励患者积极参加针对腋窝局部处理个体化方案的前瞻性临床研究。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 75,
+      "description": "分块 76 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<858>（5）目前，多基因检测在国际指南尚未纳入决策辅助放疗的重要依据，但已有回顾性数据证实不同基因复发风险乳腺癌人群从辅助放疗中获益程度存在差异性，多基因检测有望成为乳腺癌精准个体化放疗发展的新方向。28基因RecurIndex是基于中国人群数据由肿瘤基因信息与患者临床病理因素相结合的乳腺癌复发风险评估模型。研究证实：28基因对于早期乳腺癌在术后放疗的决策上可以起到辅助作用[60]。针对RxPONDER研究二次分析显示，在激素受体阳性HER-2阴性、21基因评分≤25分、1\\~3个腋窝淋巴结阳性的乳腺癌人群中，区域淋巴结放疗未带来局部复发及无浸润性复发生存的获益，提示21基因评分存在可协助预测区域淋巴结放疗的获益[61]。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 78,
+      "description": "分块 79 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<878># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 81,
+      "description": "分块 82 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<900>2.T.紫杉类药物，含白蛋白紫杉醇、多西他赛、紫杉醇。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 82,
+      "description": "分块 83 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<917>（3）EMILIA研究证实，相对于拉帕替尼联合卡培他滨，单药T-DM1治疗有显著的PFS和OS获益〔80]。NALA研究显示，对于既往接受过 $\\geqslant 2$ 种靶向治疗的转移性 HER-2阳性乳腺癌患者，奈拉替尼联合卡培他滨相较拉帕替尼联合卡培他滨可显著延长PFS，成为目前多线抗HER-2治疗失败后的选择之一[81]。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 83,
+      "description": "分块 84 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<921>（5）HER2CLIMB研究显示，在局部晚期不可切除或转移性HER-2阳性乳腺癌患者中，与曲妥珠单抗和卡培他滨（XH）方案相比，图卡替尼联合XH方案表现更优的疗效，将疾病进展或死亡风险显著降低了46%，死亡风险降低了34%。该研究中，47%患者在入组研究时存在脑转移，对于基线时有脑转移的患者，图卡替尼也能进一步提高患者PFS，将疾病进展或死亡风险显著降低了 $52 \\%$ [83]。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 84,
+      "description": "分块 85 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<935>复发转移性乳腺癌曲妥珠单抗联用的方案"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 85,
+      "description": "分块 86 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<957># 解救化疗（续）"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 86,
+      "description": "分块 87 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<972># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 87,
+      "description": "分块 88 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<982>（4）每个方案的持续时间（周期数）和能否接受多线化疗，应根据患者的具体情况进行个体化选择。对于联合化疗有效的患者，完成6\\~8个周期后，可考虑维持治疗策略。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 88,
+      "description": "分块 89 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<995>8ASCENT研究人组了既往接受过二线及以上化疗的晚期三阴性乳腺癌患者，随机分组分别接受戈沙妥珠单抗（sacituzumab govitecan）或医生选择单药化疗（卡培他滨、艾立布林、长春瑞滨或吉西他滨）治疗[94]。研究结果显示，在既往多线耐药的难治性TNBC 患者中，戈沙妥珠单抗降低了患者 59%的疾病进展风险及52%的死亡风险。此外，EVER-132-002研究[95]针对亚洲HR+/HER-2-晚期乳腺癌患者，验证了戈沙妥珠单抗（SG）在这一特定人群中的疗效和安全性，为亚洲患者使用 SG治疗提供了有力的临床依据。目前，戈沙妥珠单抗已在国内获批应用于至少"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 89,
+      "description": "分块 90 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1005>（2）关于合理的治疗周期，有限的资料显示，持续化疗相对于短期化疗更能延长无进展生存期，甚至总生存期，但究竟应该采用长期化疗还是短期化疗（6\\~8个周期）后停药或维持治疗，需权衡疗效、药物不良反应和患者生活质量而决定。"
+    },
+    {
+      "type": "too_large",
+      "chunk_index": 90,
+      "description": "分块 91 过大 (4254 字符)",
+      "severity": "high",
+      "chunk_preview": "<1011>12姑息治疗\n\n<1013>复发转移性乳腺癌的治疗，如果连续3种化疗方案无缓解，或患者ECOG体力状态评分≥3分，则不再建议化疗，可以考虑给予最佳支持治疗或参加新药临床研究。化疗方案无缓解..."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 91,
+      "description": "分块 92 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1042>（2）芳香化酶抑制剂（AI）阿那曲唑：1mg，1次 $/ \\mathrm { d }$ ，口服。来曲唑： $2 . 5 \\mathrm { m g }$ ，1次/d，口服。依西美坦： $2 5 \\mathrm { m g }$ ，1次/d，口服。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 92,
+      "description": "分块 93 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1045>（5）西达本胺，30mg，口服，每周2次（两次服药间隔不应少于3d，如周一、周四）。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 94,
+      "description": "分块 95 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1061>（1）原发性内分泌耐药：辅助内分泌治疗时间2年内复发，或晚期一线内分泌治疗6个月内出现疾病进展。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 95,
+      "description": "分块 96 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1068>（2）MONARCH2研究中约70%患者为经AI治疗进展，结果证实阿贝西利联合氟维司群，较单药氟维司群明显延长PFS［105]。MONARCHplus研究纳人了TAM和AI治疗失败的两组人群，研究显示无论阿贝西利联合NSAI还是联合氟维司群均可显著改善患者PFS 和ORR[106]。基于此，国家药品监督管理局（NMPA）批准阿贝西利联合AI作为绝经后患者的初始内分泌治疗，同时批准联合氟维司群用于既往内分泌治疗后疾病进展"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 96,
+      "description": "分块 97 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1074>（4）MONALEESA-3研究显示，在氟维司群基础上联合瑞波西利，mPFS显著延长（20.5个月vs.12.8个月； $H R { = } 0 . 5 9 3$ ， $9 5 \\%  C I 0 . 4 8 0 { \\sim } 0 . 7 3 2 $ ，OS也获益显著[108]。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 97,
+      "description": "分块 98 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1080>（7）BOLERO-2研究证实，在非甾体AI治疗失败后，依西美坦联合依维莫司较单用依西美坦显著提高 PFS（7.8个月vs.3.2个月）〔110]。依维莫司联合氟维司群也可以带来生存获益[11]，依维莫司联合方案可作为临床选择之一。但在临床应用时应注意可能出现的不良反应，包括最常见的口腔炎及少见但严重的间质性肺炎，应酌情进行剂量"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 98,
+      "description": "分块 99 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1086>（9）对于完成AI辅助治疗停药大于12个月复发的患者可以使用AI；但对于停药12个月内复发或晚期一线内分泌治疗使用AI后进展的患者，换用另一作用机制的AI（如非甾体AI换用甾体AI)，缺乏大型随机对照临床研究的结果。结合我国临床使用中的药物可及性等因素，可结合患者综合情况合理选择使用。AI治疗进展后晚期乳腺癌内分泌药物的选择，还包括孕激素（甲羟孕酮或甲地孕酮）、托瑞米芬、TAM等。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 99,
+      "description": "分块 100 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1090># 2.激素受体阳性晚期乳腺癌的解救化疗"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 100,
+      "description": "分块 101 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1098># 1.激素受体阳性HER-2低表达"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 101,
+      "description": "分块 102 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1102># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 102,
+      "description": "分块 103 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1113># 2.激素受体阴性HER-2低表达"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 103,
+      "description": "分块 104 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1117># 五、乳腺癌骨转移"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 104,
+      "description": "分块 105 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1127>4.PET/CT可以在临床早期发现骨转移的异常信号，灵敏度和特异度都很高，但需要在PET/CT报告的CT部分提供骨窗图像明确是溶骨还是成骨转移，才能在治疗中随访评价骨转移骨质部分的疗效变化。目前PET/CT在骨转移诊断的价值有待进一步研究，临床并不作为常规推荐。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 105,
+      "description": "分块 106 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1146>（2）地舒单抗 $1 2 0 \\mathrm { m g }$ ，皮下注射，每4周给药1次。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 106,
+      "description": "分块 107 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1160>乳腺癌单纯骨转移不是可测量病灶，但是可以通过CT（骨窗）或X线摄片评价其疗效，所以应当将骨转移病灶定义为可评价病灶。在治疗前对骨扫描、PET/CT或MRI上有怀疑的每一个骨转移部位都进行认真检查。四肢骨可以用X线摄片，椎体及骨盆主要采用骨窗CT横断位平扫。而肋骨在平扫片中只能见到孤立的片段，所以要用肋骨骨窗CT的三维重建，并裁剪周围无关组织结构，以突显其完整全貌。其中“容积重建法”比“表面最大密度投影法”的图像更加直观清晰。经管医生应当结合临床症状变化，自己阅片判断病情。不管是溶骨还是成骨转移病灶，凡成骨增多者为有效修复，溶骨增多者为恶化进展。临床长期随访结果证实，有效成骨修复患者的存活期明显长于溶骨恶化进展的患者。骨窗CT是骨转移疗效评价的主要影像学检查方法，当椎体骨转移伴软组织侵犯、脊髓压迫或评估椎体稳定性时，建议联合MRI检查判断是否需要及早的手术或放疗干预。一般来说，患者主观骨痛症状的减轻，骨窗CT骨内病变边界清晰化，密度增高，软组织包块体积缩小，ECT或PET/CT提示肿瘤摄取量减少等，均可能提示肿瘤治疗有效。乳腺癌骨转移疗效评价依据RECIST1.1标准，疗效评价注意事项：乳腺癌骨转移多为溶骨性病变，有些患者在溶骨病变治疗后的修复，可以在影像学中表现为过度钙化而被误诊为成骨性转移，对这部分患者应追溯其首诊时的影像片（X线或骨窗CT）是否有溶骨性改变。仅ECT检查异常，或仅碱性磷酸酶或乳酸脱氢酶水平升高，MRI、骨窗CT或X线未发现异常者，不能诊断骨转移。建议3个月内复查骨窗CT、MRI等，以明确是否诊断骨转移，并进一步随访密切观察。骨转移的疗效评价需要结合患者症状、肿瘤标志物和影像学改变综合分析，既要避免仅靠症状变化的主观判断，又要避免只看影像变化而忽视患者疼痛症状和生活质量变化。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 108,
+      "description": "分块 109 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1172>（4）据报道，患者在长期使用双麟酸盐有发生下颌骨坏死的风险，所以使用双麟酸盐前应进行口腔检查，进行恰当地预防性治疗，用药期间应注意口腔清洁，并尽量避免拔牙等口腔手术。如用药期间无诱因或口腔操作后出现颌面部骨暴露、不能愈合，应尽早联系专科医生处理。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 109,
+      "description": "分块 110 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1180>（4）经过治疗后骨痛缓解不是停药指征。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 111,
+      "description": "分块 112 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1210>2.PET/CT能够反映肿瘤及正常组织的代谢差异，有助于肿瘤诊断，但是对脑内较小的转移灶并不灵敏，临床诊断应结合头颅增强MRI或增强CT扫描。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 112,
+      "description": "分块 113 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1218># 1.乳腺癌脑转移局部治疗推荐"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 113,
+      "description": "分块 114 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1222># 2.乳腺癌脑转移抗HER-2靶向药物治疗推荐"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 116,
+      "description": "分块 117 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1244>8 对症支持治疗是乳腺癌脑转移的重要治疗手段，可以改善患者生活质量，有助于放疗和药物治疗的进行。对于有颅内高压表现的患者，应常规给予甘露醇、糖皮质激素（如地塞米松）、利尿药等治疗，以减轻脑水肿症状。放疗后出现顽固性脑水肿者，可给予贝伐珠单抗减轻脑水肿。通常采用7.5mg/kg，2周1次，中位使用4个周期。出现癫痫发作患者，应予以抗癫痫药物治疗。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 117,
+      "description": "分块 118 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1252># 2.治疗药物致吐风险分级"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 118,
+      "description": "分块 119 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1269>（2）中致吐风险静脉治疗（ ${ \\mathrm { 5 - H T } } _ { 3 }$ 受体拮抗剂 $^ +$ 地塞米松二联方案)化疗前给予：1）5-HT受体拮抗剂（任选一种)：昂丹司琼/格拉司琼/托烷司琼／帕洛诺司琼等［包括针剂、口服、透皮贴片（格拉司琼）多种剂型，可根据需要选择]。2）地塞米松： $6 { \\sim } 1 2 \\mathrm { m g }$ ，口服/静脉滴注。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 119,
+      "description": "分块 120 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1279># （二）骨髓抑制的预防和治疗［102]"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 120,
+      "description": "分块 121 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1289># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 121,
+      "description": "分块 122 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1297># 2.化疗导致的血红蛋白水平下降"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 124,
+      "description": "分块 125 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1313>3.化疗导致的血小板减少"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 125,
+      "description": "分块 126 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1317># 【注释】"
+    },
+    {
+      "type": "too_large",
+      "chunk_index": 126,
+      "description": "分块 127 过大 (3350 字符)",
+      "severity": "high",
+      "chunk_preview": "<1328># （三）心脏安全性管理［132]\n\n<1330>1.心脏安全性的监测方法及评价\n\n<1332><table><tr><td>方法</td><td>优点</td><td>缺点</td></..."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 126,
+      "description": "分块 127 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1328># （三）心脏安全性管理［132]"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 127,
+      "description": "分块 128 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1370>（2）小分子TKI：虽然小分子TKI的心功能不全及LVEF下降风险较低，但仍推荐在治疗前和治疗过程中，定期监测LVEF。LVEF低于正常值下限，或出现≥2级（至少较基线下降10%\\~19%）的LVEF下降且合并相关症状，暂停药物治疗，直至LVEF恢复至正常范围内，且较基线下降小于10%,相关症状恢复。暂停后恢复治疗需要进行剂量调整。在临床研究中也有QT间期延长的报道，在用药过程中需要保持警惕。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 128,
+      "description": "分块 129 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1378># （四）内分泌药物耐受性及用药注意事项"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 129,
+      "description": "分块 130 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1390># 3.乳腺癌患者可能因生理或使用药物因素出现卵巢功能下降，而引起绝经相关症状、泌尿生殖系统症状、低骨量及骨质疏松症"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 130,
+      "description": "分块 131 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1398># 1.TKI相关性腹泻"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 131,
+      "description": "分块 132 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1404>（2）TKI相关性腹泻的预防：治疗前应教育患者，告知可能出现的腹泻症状，指导患者每日记录排便的频率、形态及变化。开始用药时可嘱患者膳食中以优质蛋白、低脂和低纤维的谷物为主，避免含乳糖的食物，多饮水以及少食多餐。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 132,
+      "description": "分块 133 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1414><table><tr><td>奈拉替尼用药时间</td><td>洛哌丁胺剂量</td><td>洛哌丁胺服药次数</td></tr><tr><td>第1~2周（第1~14天）</td><td>4mg</td><td>每日3次</td></tr><tr><td>第3~8周（第15~56天）</td><td>4mg</td><td>每日2次</td></tr><tr><td>第9~52周（第57~365天）</td><td>4mg</td><td>按需使用（不得超过16mg/d）</td></tr></table>"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 133,
+      "description": "分块 134 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1418># 2.TKI相关皮肤不良反应"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 134,
+      "description": "分块 135 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1428># （六）CDK4/6抑制剂不良反应管理"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 135,
+      "description": "分块 136 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1436>2.CDK4/6抑制剂导致中性粒细胞减少症的剂量调整和治疗"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 136,
+      "description": "分块 137 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1444># 3.CDK4/6抑制剂相关腹泻"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 137,
+      "description": "分块 138 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1452># 5.CDK4/6抑制剂相关静脉血栓栓塞"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 138,
+      "description": "分块 139 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1464># （七）西达本胺不良反应管理［136]"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 140,
+      "description": "分块 141 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1493>2.基线评估，详细询问既往史及用药史，如肺纤维化、结核、新型冠状病毒感染、慢性阻塞性肺疾病（COPD）、间质性肺病、自身免疫性疾病、感染性疾病（获得性免疫缺陷综合征、肝炎）、器官移植，应用激素和抗生素剂量及用药时长。基线检查包括血液学分析（血常规、生化）、皮肤科检查、心脏检查、内分泌检查［垂体／肾上腺、甲状腺功能检查如血皮质醇浓度检测、促甲状腺素（TSH）、T4检测、血淀粉酶／脂肪酶]、肺部检查等以及治疗中、治疗后随访（出现irAEs 时每次访视时进行症状评估与实验室检查；治疗中每4\\~6周进行上述检查）。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 141,
+      "description": "分块 142 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1497>4.适当治疗，根据分级制订适合患者的治疗方案。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 145,
+      "description": "分块 146 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1535># 4.免疫相关肝炎"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 147,
+      "description": "分块 148 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1559># 1.营养风险筛查"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 148,
+      "description": "分块 149 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1567># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 149,
+      "description": "分块 150 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1576># 【注释】"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 151,
+      "description": "分块 152 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1620>（2）药物治疗：需要根据患者的皮肤不良反应类型、严重程度、患者的整体身体状况等因素，以及MDT会诊建议，由主诊医生综合判断后处方及调整治疗药物。常用的外用及系统性药物如下。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 152,
+      "description": "分块 153 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1636># 八、生物类似药"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 153,
+      "description": "分块 154 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1646># 九、临床研究"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 154,
+      "description": "分块 155 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1652># 2.乳腺癌临床研究的设计、实施和报告"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 155,
+      "description": "分块 156 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1656># 十、真实世界研究"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 156,
+      "description": "分块 157 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1668># 3.真实世界研究的设计类型"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 157,
+      "description": "分块 158 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1676># 1.术前新辅助治疗的患者管理"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 158,
+      "description": "分块 159 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1686># 3.复发转移性乳腺癌患者的管理"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 159,
+      "description": "分块 160 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1696># 4.特殊时期的患者管理"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 160,
+      "description": "分块 161 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1706>（1）CTC：CTC是指从恶性肿瘤原发部位脱落，通过血管或淋巴系统进入血液循环的细胞，其形成是肿瘤转移过程的关键步骤。CTC能够在时间和空间上反映实体肿瘤的异质性，可以作为补充手段进行病理诊断、预后判断、疾病监测和分子分型等。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 161,
+      "description": "分块 162 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1710>（2）ctDNA：ctDNA是肿瘤细胞凋亡、坏死之后释放到外周血中的游离DNA，片段长度一般约为166个碱基对，与一个核小体所结合的DNA长度保持大体一致。ctDNA的降解可能与肝脏和肾脏代谢相关，根据不同DNA片段的大小和结构，其半衰期差异较大，范围10\\~120min。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 162,
+      "description": "分块 163 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1716># 2.循环肿瘤标志物的检测技术"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 163,
+      "description": "分块 164 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1726>（2）dPCR：dPCR是第三代PCR技术，其原理与传统的荧光定量PCR类似，只是将检测形式从一个反应管更改为数万个独立的反应单元，这样可以避免核酸之间的相互干扰并降低PCR抑制剂的影响，从而实现其超高灵敏度。此外，dPCR不需要烦琐的标准曲线就可以实现目的核酸的绝对定量，具有良好的可重复性。"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 164,
+      "description": "分块 165 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1734># 1.智能影像助力肿瘤诊断与治疗评价"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 165,
+      "description": "分块 166 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1742># 3.智能决策丰富临床实践的决策模式"
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 166,
+      "description": "分块 167 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1755>[6]ALLISONKH,HAMMONDM,OWSETTM,etal.Estrogenand progesteronereceptor testing ibreastcancer: ASCO/CAP guideline update.JClin Oncol,2020,38 (12):1346-1366."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 167,
+      "description": "分块 168 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1762>[13]CHENX C,JIAO DC,QIAOJH,etal. De-escalated neoadjuvant weekly nab-paclitaxel with trastuzumab and pertuzumabversus docetaxel,carboplatin,trastuzumab,and pertuzumab inpatients with HER2-positiveearlybreast cancer (HELEN-006):amulticentre,randomised,phase3trial.LancetOncol,2024,26(1):27-36."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 168,
+      "description": "分块 169 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1767>[18]WANGF,WANG Y,XIONG B,etal.Neoadjuvant pyrotiniband trastuzumab in HER2-positive breast cancer with no earlyresponse (NeoPaTHer):efficacy,safety and biomarkeranalysisofaprospective,multicentre,responseadapted study.Signal TransductTarget Ther,2025,10(1): 45."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 169,
+      "description": "分块 170 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1772>[23] CHENL,LIH,ZHANG H,etal.Camrelizumab vs placebo in combination with chemotherapyas neoadjuvant treatmentinpatients with earlyorlocallyadvanced triple-negative breast cancer:thecamreliefrandomized clinical trial.JAMA,2025,333(8):673-681."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 170,
+      "description": "分块 171 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1778>[29] CARDOSOF,VAN'TVEERLJ,BOGAERTSJ,etal.70-Gene signatureas anaid to treatment decisions inearlystage breast cancer.NEnglJMed,2016,375(8):717-729."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 171,
+      "description": "分块 172 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1784>[35] WANGX,WANG SS,HUANGH,etal.Efectofcapecitabine maintenance therapyusinglowerdosageand higher frequency vs.observation on disease-free survival among patients with early-stage triple-negative breast cancer who had received standard treatment:theSYSUCC-001randomized clinical trial.JAMA,2021,325(1):50-58."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 172,
+      "description": "分块 173 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1789>[40]P PAGANI O,WALLEYBA,FLEMING GF,etal.Adjuvant exemestane withovariansuppression in premenopausal breastcancer:long-term follow-upof thecombinedTEXTandSOFTtrials.JClinOncol,2023,41(7):1376-1382."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 173,
+      "description": "分块 174 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1794>[45」OFFERSENB V,ALSNERJ,NIELSENHM,etal.Partial breast iradiation versuswholebreast irradiation for early breast cancerpatients inarandomized phase Itrial:The Danish Breast Cancer Group Partial BreastIrradiation Trial.J Clin Oncol,2022,40 (36): 4189-4197."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 174,
+      "description": "分块 175 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1799>[50]F KUNKLERIH,WILLIAMSLJ,JACKWJL,etal.Breast-conservingsurgerywithorwithoutiradiationinearly breast cancer.NEnglJMed,2023,388(7):585-594."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 175,
+      "description": "分块 176 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1804>[55] KIMYB,BYUHK,KIMDY,etal.Efectofelectiveinteralmammarynodeirrdiationonisease-freeurival in women withnode-positivebreastcancer:arandomized phase3clinicaltrial.JAMAOncol,2022,8(1):96-105."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 176,
+      "description": "分块 177 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1810>[61]JAGSI R,BARLOW WE,WOODWARD WA,et al. Radiotherapyuse and incidence of locoregional recurrence in patients withfavorable-risk,node-positivebreastcancerenroledintheWOGSo7trial.JAMAOncol,223,9(8): 1083-1089."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 177,
+      "description": "分块 178 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1815>[66]XIE J,XUF,ZHAO Y,etal.Hypofractionated versus conventional intensity-modulatedradiation irradiation (HARVEST-adjuvant):study protocol forarandomised non-inferiormulticentrephase Itrial.BMJOpen,2022,12 (9):e062034."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 178,
+      "description": "分块 179 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1820>[71]CAOL,OUD,QI W X,et al.A randomized trial of earlycardiotoxicityin breast cancer patients receiving postoperative IMRTwith or without serial cardiac dose constraints.IntJCancer,2025,156(6):1213-1224."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 179,
+      "description": "分块 180 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1826>[77]Y YAOH,YANM,TONGZetalSafety,effcacyandpharmacokineticsofHR-A1811,ahumanepdermalgrowth factor receptor 2-directed antibody-drug conjugate,in human epidermal growth factor receptor 2-expressing or mutated advanced solid tumors: a global phase i trial.JClin Oncol,2024,42 (29):3453-3465."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 180,
+      "description": "分块 181 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1831>[82]RUGO HS,IMSA,CARDOSOF,etal.Efcacyof margetuximab vs.trastuzumab inpatients with pretreated ERBB2-positiveadvancedbreastcancer:aphase3randomized clinicaltrial.JAMAOncol,2021,7(4):57-584."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 181,
+      "description": "分块 182 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1837>[88]ROBSONME,TUNGN,CONTEP,etal. OlympiADfinaloverallsurvival andtolerabilityresults: Olaparib ersus chemotherapy treatment of physician's choice in patients with a germline BRCA mutation and HEK-negauive metastatic breast cancer.Ann Oncol,2019,30 (4): 558-566."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 182,
+      "description": "分块 183 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1843>[94] BARDIA A,HURVITZ SA,TOLANEY SM,et al.Sacituzumab govitecan inmetastatic triple-negative breast cancer.NEnglJMed,2021,384(16):1529-1541."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 183,
+      "description": "分块 184 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1849>[100]HONGRX,XUF,XIA W,etal.Metronomiccapecitabine plusaromatase inhibitoras initial therapyinpatients with hormone receptor-positive,human epidermal growth factor receptor 2-negative metastatic breast cancer-the phase II MECCA trial. JClin Oncol,2025: JCO2400938."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 184,
+      "description": "分块 185 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1854>[105] SLEDGE GWJR,TOIM,NEVENP,etal.MONARCH2:abemaciclib incombination with fulvestrantin women with HR+/HER2-advanced breastcancer who had progressed while receiving endocrine therapy.JClin Oncol, 2017,35 (25):2875-2884."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 185,
+      "description": "分块 186 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1859>[110] YARDLEYDA,NOGUCHI S,PRITCHARDKI, et al.Everolimus plus exemestane in postmenopausal patients with HR(+)breast cancer:BOLERO-2final progression-freesurvival analysis.Adv Ther,2013,30(10):870-884."
+    },
+    {
+      "type": "poor_boundary",
+      "chunk_index": 186,
+      "description": "分块 187 边界质量较差",
+      "severity": "low",
+      "chunk_preview": "<1863>[114] KALINSKYK,ACCORDINOMK,CHUZANC,etal.Randomized phase I trialofendocrine therapy withorwithout ribociclib after progresson on cyclin-dependent Kinase 4/6 inhibition in hormone receptor-positive,human"
+    }
+  ],
+  "recommendations": [
+    "建议对过大的分块进行进一步分割，保持分块大小的合理性",
+    "建议优化分块边界检测逻辑，提高边界识别的准确性"
+  ]
+}
